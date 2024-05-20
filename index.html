@@ -5,79 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TJS Labs Consultoria em TI</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #121212;
             color: #f1f1f1;
-            line-height: 1.6;
         }
 
         .container {
             width: 80%;
+            max-width: 1200px;
             margin: auto;
             overflow: hidden;
+            padding: 0 15px;
         }
 
         header {
             background: #1a1a1a;
             color: #fff;
-            padding: 20px 0;
-            border-bottom: #0f9d58 3px solid;
+            padding: 50px 0;
             text-align: center;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            background: #0f9d58;
+            position: absolute;
+            bottom: 0;
+            left: 0;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
+            letter-spacing: 2px;
         }
 
         header p {
-            margin: 0;
+            margin: 10px 0 0;
             font-size: 1.2em;
             color: #0f9d58;
         }
 
         main {
-            padding: 20px 0;
+            padding: 50px 0;
         }
 
         section {
-            margin-bottom: 20px;
+            margin-bottom: 50px;
         }
 
         section h2 {
             text-align: center;
             color: #0f9d58;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 40px;
+            font-size: 2em;
+            position: relative;
         }
 
-        section p, section ul {
-            text-align: center;
-            color: #d1d1d1;
+        section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #0f9d58;
+            margin: 10px auto 0;
         }
 
-        section ul {
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card ul {
             list-style: none;
             padding: 0;
         }
 
-        section ul li {
-            margin: 5px 0;
+        .card ul li {
+            margin: 10px 0;
         }
 
-        #about p, #contact p {
+        .card p, .card ul li {
+            color: #d1d1d1;
+        }
+
+        .contact-info p {
             max-width: 700px;
-            margin: 0 auto;
+            margin: 10px auto;
+            text-align: center;
         }
 
         footer {
             background: #1a1a1a;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
             border-top: #0f9d58 3px solid;
         }
 
@@ -87,11 +127,25 @@
 
         @media (min-width: 768px) {
             header h1 {
-                font-size: 3em;
+                font-size: 4em;
             }
 
             header p {
                 font-size: 1.5em;
+            }
+
+            .cards {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .card {
+                flex: 1;
+                margin: 20px;
+            }
+
+            .contact-info p {
+                text-align: left;
             }
         }
     </style>
@@ -108,28 +162,60 @@
         <section id="about">
             <div class="container">
                 <h2>About Us</h2>
-                <p>TJS Labs Consultoria em TI specializes in building high-quality software solutions tailored to your business needs. With a focus on innovation and efficiency, we deliver products that drive success.</p>
+                <div class="card">
+                    <p>TJS Labs Consultoria em TI specializes in building high-quality software solutions tailored to your business needs. With a focus on innovation and efficiency, we deliver products that drive success.</p>
+                </div>
             </div>
         </section>
 
         <section id="services">
             <div class="container">
                 <h2>Our Services</h2>
-                <ul>
-                    <li>Custom Software Development</li>
-                    <li>Web Application Development</li>
-                    <li>Mobile Application Development</li>
-                    <li>IT Consulting</li>
-                </ul>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Custom Software Development</h3>
+                        <ul>
+                            <li>Enterprise Solutions</li>
+                            <li>API Development</li>
+                            <li>System Integration</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Web Application Development</h3>
+                        <ul>
+                            <li>Responsive Websites</li>
+                            <li>E-commerce Platforms</li>
+                            <li>Content Management Systems</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Mobile Application Development</h3>
+                        <ul>
+                            <li>iOS and Android Apps</li>
+                            <li>Cross-Platform Solutions</li>
+                            <li>Mobile Optimized Websites</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>IT Consulting</h3>
+                        <ul>
+                            <li>Strategy & Planning</li>
+                            <li>Technology Assessment</li>
+                            <li>Project Management</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="contact">
             <div class="container">
                 <h2>Contact Us</h2>
+                <div class="card contact-info">
                 <p>Email: oi@thalles.dev</p>
                 <p>Phone: +55 (33) 9 3300-6011</p>
                 <p>Address: Rua Princesa Isabel, Caratinga, MG</p>
+                </div>
             </div>
         </section>
     </main>
@@ -141,3 +227,4 @@
     </footer>
 </body>
 </html>
+
